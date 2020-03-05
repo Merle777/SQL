@@ -4,7 +4,7 @@
 
 SELECT countries.name, languages.language, languages.percentage FROM countries
 JOIN languages ON countries.id = languages.country_id
-WHERE language = 'Slovene'
+WHERE language LIKE 'Slovene'
 ORDER BY percentage DESC;
 
 --PREGUNTA 2
@@ -43,7 +43,7 @@ WHERE surface_area < 501 AND population > 100000;
 --con un capital superior a 200 y una esperanza de vida superior a 75 años? (1)
 
 SELECT countries.name AS Country, countries.government_form, countries.capital, countries.life_expectancy FROM countries
-WHERE government_form = 'Constitutional Monarchy' AND capital > 200 AND life_expectancy > 75;
+WHERE government_form LIKE 'Constitutional Monarchy%' AND capital > 200 AND life_expectancy > 75;
 
 --7. ¿Qué consulta harías para obtener todas las ciudades de Argentina dentro del distrito de Buenos Aires 
 --y tener una población superior a 500,000? La consulta debe devolver el nombre del país, el nombre de la ciudad, 
@@ -51,7 +51,7 @@ WHERE government_form = 'Constitutional Monarchy' AND capital > 200 AND life_exp
 
 SELECT countries.name AS Country, cities.name AS cities, cities.district, cities.population FROM cities
 JOIN countries ON countries.id=cities.country_id
-WHERE district = 'Buenos Aires' AND cities.population > 500000;
+WHERE district LIKE 'Buenos Aires' AND cities.population > 500000;
 
 --8. ¿Qué consulta harías para resumir el número de países en cada región? 
 --La consulta debe mostrar el nombre de la región y el número de países. 
