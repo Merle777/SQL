@@ -1,7 +1,7 @@
 --1. ¿Qué consulta ejecutarías para obtener todos los clientes dentro de city_id = 312? 
 --Su consulta debe devolver el nombre, apellido, correo electrónico y dirección del cliente.
 SELECT customer.first_name, customer.last_name, customer.email, address.address FROM customer
-JOIN address ON address = customer.address_id
+JOIN address ON address.address_id = customer.address_id
 WHERE city_id = 312;
 
 --2. ¿Qué consulta harías para obtener todas las películas de comedia? 
